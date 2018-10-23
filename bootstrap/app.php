@@ -10,7 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $config = require('config/app.php');
 $app = new Slim\App($config);
 $dotenv = new Dotenv\Dotenv( __DIR__ .'/../');
-$dotenv->load();
+$dotenv->overload();
 // Fetch DI Container
 $container = $app->getContainer();
 

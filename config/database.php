@@ -1,7 +1,6 @@
 <?php
 define('APP_PATH',__DIR__);
 return [
-    
     'doctrine' => [
         // if true, metadata caching is forcefully disabled
         'dev_mode' => true,
@@ -11,7 +10,7 @@ return [
         'cache_dir' => APP_PATH.'/../storage/framework/cache/data',
 
         // you should add any other path containing annotated entity classes
-        'metadata_dirs' => [APP_PATH.'/../app/Models'],
+        'metadata_dirs' => [APP_PATH.'/../app/Entity'],
         'default' => getenv('DB_CONNECTION', 'mysql'),
         'connection' => [
             'driver' => 'pdo_mysql',
@@ -20,7 +19,7 @@ return [
             'dbname' => getenv('DB_DATABASE'),
             'user' => getenv('DB_USERNAME'),
             'password' => getenv('DB_PASSWORD'),
-            'charset' => 'utf-8'
+            'charset' => 'utf8'
         ]
     ]
 ];

@@ -6,12 +6,16 @@ use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\Setup;
 use Slim\Container;
 require __DIR__ . '/../vendor/autoload.php';
-
+$dotenv = new Dotenv\Dotenv( __DIR__ .'/../');
+$dotenv->overload();
 $container = new Container(require __DIR__ . '/../config/database.php');
 $container[EntityManager::class] = function (Container $container): EntityManager {
     $config = Setup::createAnnotationMetadataConfiguration(
         $container['doctrine']['metadata_dirs'],
-        $container['doctrine']['dev_mode']
+        $container['doctrine']['dev_mode'],
+        null,
+        null,
+        false
     );
 
     $config->setMetadataDriverImpl(
