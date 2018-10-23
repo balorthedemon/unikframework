@@ -1,6 +1,9 @@
 {
     "name": "unikframework/unikframework",
     "type":"project",
+    "description": "The Unik Framework.",
+    "keywords": ["framework", "Unik","Unik Framework"],
+    "license": "MIT",
     "require": {
         "php": "^7.1.3",
         "monolog/monolog": "1.0.*",
